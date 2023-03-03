@@ -1,232 +1,158 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Allen Kong</title>
-  
-  
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
+<html lang="en">
 
-  
-<link rel="stylesheet" href="/css/style.css">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Allen Kong">
+
+
+
+
+
+<title>Tag: hexo | Allen Kong</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url(/assets/pic.jpeg)">
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Allen Kong</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/CV">CV</a>
+                
+                    <a class="menu-item" href="/Projects">Projects</a>
+                
+                    <a class="menu-item" href="/X-Group">About X-Group</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
         </div>
-    </section>
-    <section class='menu'>
-        <div>Allen Kong</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-            <a href="/tags/" class="Btn">
-              <li>Tags</li>
-            </a>  
-          
-            <a href="/categories/" class="Btn">
-              <li>Categories</li>
-            </a>  
-          
-            <a href="/about/" class="Btn">
-              <li>About</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
+    </nav>
 
-    <div class="container">
-        <div data-pager-shell>
-            <ul class="Index">
-  
-    <header class='PageTitle'>
-        <h1>{ hexo }</h1>
-    </header>
-  
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2022/02/21/Skills%20&amp;%20Awards/">Curriculum Vitae</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2022-02-21T03:41:10.000Z" itemprop="datePublished">
-    2022-02-21
-  </time>
-  
-  | 
-  <ul>
     
-  <li class="meta-text">
-  { <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a> }
-  </li>
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Allen Kong</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/CV">CV</a>
+                
+                    <a class="menu-item" href="/Projects">Projects</a>
+                
+                    <a class="menu-item" href="/X-Group">About X-Group</a>
+                
+            </div>
+        </div>
+    </nav>
 
-  <li class="meta-text">
-  { <a href="/tags/hexo/">hexo</a> }
-  </li>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                
 
-
-  </ul>
-  
-  
-  / 
-  <ul>
     
-  <li class="meta-text">
-  { <a href="/categories/CV/">CV</a> }
-  </li>
+<div class="container">
+    <div class="post-wrap tags">
+        <h2 class="post-title">-&nbsp;Tag&nbsp;·&nbsp;hexo-</h2>
+    </div>
+    <div class="post-wrap archive">
+    
+    
+        
 
+        
+            <h3>2022</h3>
+        
 
-  </ul>
-  
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/02/21/index/">Curriculum Vitae</a>
+            <span class="archive-item-date">February 21, 2022</span>
+        </article>
+    
+    
+</div>
 </div>
 
-    </header>
-    <div>
-      
-        <h3 id="Hello-there-I’m-Allen-Kong-a-master-student-at-SUSTech-School-of-Design"><a href="#Hello-there-I’m-Allen-Kong-a-master-student-at-SUSTech-School-of-Design" class="headerlink" title="Hello there! I’m Allen Kong, a master student at SUSTech School of Design."></a>Hello there! I’m <strong>Allen Kong</strong>, a master student at SUSTech <strong>School of Design</strong>.</h3><p>Let me introduce myself.</p>
-<p>Email: <a href="mailto:&#x31;&#x32;&#50;&#51;&#x33;&#x31;&#57;&#x32;&#x40;&#115;&#x75;&#x73;&#x74;&#101;&#x63;&#104;&#46;&#101;&#x64;&#117;&#46;&#x63;&#x6e;">&#x31;&#x32;&#50;&#51;&#x33;&#x31;&#57;&#x32;&#x40;&#115;&#x75;&#x73;&#x74;&#101;&#x63;&#104;&#46;&#101;&#x64;&#117;&#46;&#x63;&#x6e;</a> | Advisor: Xueliang Li</p>
-<p>I graduated from Shenyang University of Technology for my undergraduate degree. Now I am studying in SUSTech and eagerly majoring at the design research on social robots for anxiety alleviation in waiting rooms of hospitals. And my advisor is <a href="#">Xueliang Li</a>.</p>
-<h2 id="Skills-amp-Awards"><a href="#Skills-amp-Awards" class="headerlink" title="Skills &amp; Awards"></a>Skills &amp; Awards</h2><p>I’m interested in designing the hardware and software aspects of robot.</p>
-<ul>
-<li><p>Proficiency in SolidWorks, Adams, Matlab, ug modeling and simulation, as well as C, python, Stm32F1 programming.</p>
-</li>
-<li><p>Obtain the National Second Prize in the National Student Robotics Television Competition (Robocon2018)</p>
-</li>
-</ul>
-<div align=center><img src="https://github.com/AllenKon/pic/raw/main/dog(1).jpeg" width = 30% height = 30%>
-<div align=left>
-
-<ul>
-<li>Obtain National Second Prize of National University Mathematics Competition</li>
-</ul>
-<div align=center><img src="https://github.com/AllenKon/pic/raw/main/math.jpeg" width = 30% height = 30%>
-<div align=left>
-
-<ul>
-<li>Obtain Challenge Cup Silver Award (Provincial Second Prize)</li>
-</ul>
-<div align=center><img src="https://github.com/AllenKon/pic/raw/main/Challenge.jpeg" width = 30% height = 30%>
-<div align=left>
-
-<ul>
-<li>Complete a patent certificate of new utility, An Electrocatalytic Intelligent Integrated Water Treatment Equipment</li>
-</ul>
-<div align=center><img src="https://github.com/AllenKon/pic/raw/main/water.png" width = 30% height = 30%>
-
-
-      
-    </div>
-</article>
-
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2022/02/20/project/">Design research on social robots for anxiety alleviation in waiting rooms of hospitals</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2022-02-20T03:41:10.000Z" itemprop="datePublished">
-    2022-02-20
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/hexo/">hexo</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/Project/">Project</a> }
-  </li>
-
-
-  </ul>
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h2 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h2><p>Social robots robots are increasingly used in hospitals to provide informational guidance and customer service. However, lack of work is done on their roles to help people alleviate anxiety people might experience while waiting for medical procedures (such as registration, result waiting and diagnostic meetings with doctors). Various environmental (e.g. interior design, facilities) and social factors (e.g. social interaction with the others) could affect the waiting experiences of patients. The accumulation of individual and group anxiety posits potential threat to the hospital systems, which might lead to bad experience or even interpersonal conflicts. This project aims to research the opportunities of designing social robots that help people avoid or alleviate people’s anxiety while waiting in the hospitals and develop the brand new type of social interaction with human and robots. </p>
-<h2 id="KEYWORDS"><a href="#KEYWORDS" class="headerlink" title="KEYWORDS"></a>KEYWORDS</h2><p>Human Robot Interaction, Hospital, Social Robots, Emotional interaction, Emotion-based Robot Gestures</p>
-<h2 id="RESEARCH-PURPOSE-x2F-QUESTIONS"><a href="#RESEARCH-PURPOSE-x2F-QUESTIONS" class="headerlink" title="RESEARCH PURPOSE&#x2F;QUESTIONS"></a>RESEARCH PURPOSE&#x2F;QUESTIONS</h2><ul>
-<li>To design a social robot (between a companion and service robot) that helps mitigate people’s waiting anxiety</li>
-<li>To explore what are the ‘effective’ interactive behaviors of social robots in emotional communication and social interaction with human in waiting environments</li>
-</ul>
-
-      
-    </div>
-</article>
-
-    </li>
-  
-</ul>
-
-
-
-            <footer>
-    <div>© 2023 - Allen Kong </div>
-    <div>
-        <span>
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Allen Kong | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
 </footer>
 
-        </div>
     </div>
-</div>
-
-<script src="/js/pager/dist/singlepager.js"></script>
-
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
 </body>
+
 </html>
