@@ -13,7 +13,7 @@
 
 
 
-<title>Prototype Stage 2 | Allen Kong</title>
+<title>Design Rationale | Allen Kong</title>
 
 
 
@@ -123,76 +123,11 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Prototype Stage 2</h1>
+            <h1 class="post-title">Design Rationale</h1>
             
                 <div class="post-meta">
                     
@@ -210,21 +145,7 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Stage-2-Camera-Tracking-System"><a href="#Stage-2-Camera-Tracking-System" class="headerlink" title="Stage 2 (Camera Tracking System)"></a>Stage 2 (Camera Tracking System)</h2><div align=center><img src="https://github.com/AllenKon/pic/blob/main/tracking1.jpg?raw=true" height=70% width=70%>  
-</div>
-<br>
-
-<div align=center><img src="https://github.com/AllenKon/pic/blob/main/tracking2.jpg?raw=true" height=70% width=70%>  
-</div>
-<br>
-
-<ul>
-<li><p><font face="times new roman">To enhance the quality of interaction between a social robot and its user, it is necessary to equip the robot with a visual component that allows its interaction screen to track the user’s head movements in real time. This can facilitate the robot’s ability to respond appropriately to the user’s nonverbal cues, thereby improving the effectiveness of human-robot interaction.</font></p>
-</li>
-<li><p><font face="times new roman">To explore what are the ‘effective’ interactive behaviors of social robots in emotional communication and social interaction with human in waiting environments.</font></p>
-</li>
-</ul>
-
+            
         </div>
 
         
@@ -238,7 +159,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://allenkon.github.io/2022/02/21/Stage_2/">https://allenkon.github.io/2022/02/21/Stage_2/</a></span>
+                        <span><a href="https://allenkon.github.io/2022/02/21/Design_Rationale/">https://allenkon.github.io/2022/02/21/Design_Rationale/</a></span>
                     </p>
                 
                 
@@ -271,10 +192,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/02/21/Stage_1/">Prototype Stage 1</a>
+                <a class="prev" rel="prev" href="/2022/02/21/Design_Concept/">Design Concept</a>
             
             
-            <a class="next" rel="next" href="/2022/02/21/Use_Scenario/">Use Scenario</a>
+            <a class="next" rel="next" href="/2022/02/21/Research_Background/">Research Background</a>
             
         </section>
 
