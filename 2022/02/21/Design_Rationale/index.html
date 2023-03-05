@@ -123,6 +123,71 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
@@ -145,7 +210,109 @@
         </header>
 
         <div class="post-content">
-            
+            <br>
+
+<h2 id="Problems"><a href="#Problems" class="headerlink" title="Problems:"></a>Problems:</h2><ul>
+<li><p>How to distract waiting patients?</p>
+</li>
+<li><p>How to be innovative in the way robots interact with people? </p>
+</li>
+<li><p>What kind of interaction would be considered more efficient? </p>
+</li>
+<li><p>How to lower the threshold of Human-Computer Interaction research?</p>
+</li>
+</ul>
+<br>
+
+<h2 id="Design-Objectives"><a href="#Design-Objectives" class="headerlink" title="Design Objectives:"></a>Design Objectives:</h2><ul>
+<li><p>To design a social robot that helps mitigate people’s waiting anxiety</p>
+</li>
+<li><p>To explore what are the ‘effective’ interactive behaviors of social robots in emotional communication and social interaction with human in waiting environments</p>
+</li>
+</ul>
+<br>
+
+<h2 id="How-amp-Why"><a href="#How-amp-Why" class="headerlink" title="How &amp; Why:"></a>How &amp; Why:</h2><ul>
+<li><h3 id="Visual-Accompany-amp-Service"><a href="#Visual-Accompany-amp-Service" class="headerlink" title="Visual (Accompany &amp; Service):"></a>Visual (Accompany &amp; Service):</h3><ul>
+<li><p>The capacity for visual perception is essential for social robots in hospital environments, as it enables the machine to detect and identify individuals in its surroundings. This capability includes the ability to recognize and respond to various forms of nonverbal communication, such as facial expressions, gestures, and body language, which are all critical aspects of human interaction.</p>
+</li>
+<li><p>The ability to perceive and interpret visual information permits the robot to execute specialized tasks such as delivering specific items to designated locations or individuals. This function requires the machine to recognize and locate specific objects or individuals accurately, which is a fundamental aspect of the robot’s overall functionality.</p>
+</li>
+<li><p>The capacity for visual perception enhances the robot’s ability to offer emotional support and companionship to patients by recognizing and responding to emotional cues such as sadness, happiness, or anxiety.</p>
+</li>
+</ul>
+<p>In conclusion, the visual perception capability of social robots is vital to their ability to effectively interact with humans, perform essential tasks, and provide support in the hospital setting.</p>
+</li>
+</ul>
+<br>
+
+<ul>
+<li><h3 id="Movement"><a href="#Movement" class="headerlink" title="Movement:"></a>Movement:</h3><ul>
+<li><p>Movement enhances the robot’s capability to navigate through complex environments and interact with humans more effectively. This includes the ability to move to various locations within a hospital setting and approach people to offer assistance or perform tasks.</p>
+</li>
+<li><p>Movement is fundamental for the robot’s ability to manipulate objects, such as picking up and delivering items. This demands the robot to move its arms, hands, and fingers in a precise manner, requiring a high level of control and accuracy.</p>
+</li>
+<li><p>Movement is critical to the robot’s capacity to provide emotional support and companionship to patients. By being able to move and change its position, the robot can adjust its proximity to the patient and create a more natural and engaging interaction, which can have a significant impact on the patient’s emotional state.</p>
+</li>
+</ul>
+<p>In conclusion, the ability of social robots to move is indispensable to their capacity to perform a wide range of tasks in a hospital setting and interact with humans in a meaningful way.</p>
+</li>
+</ul>
+<br>
+
+<ul>
+<li><h3 id="Behavior"><a href="#Behavior" class="headerlink" title="Behavior:"></a>Behavior:</h3><ul>
+<li><p>The behavior of social robots significantly affect the establishment of interactions with humans. Therefore, social robots must be programmed to adhere to social norms and expectations, while also taking into account cultural, social, and moral factors.</p>
+</li>
+<li><p>Behavior design enables social robots to perform specific tasks and provide tailored support to patients, depending on their individual needs. </p>
+</li>
+<li><p>The design of social robots’ behavior is paramount to ensure their safety and reliability. Their behavior must be carefully programmed to prevent potential harm or danger to patients’ feelings in the hospital environment.</p>
+</li>
+</ul>
+<p>In conclusion, designing the behavior of social robots is a crucial element that enables them to interact effectively and meaningfully with humans while performing a diverse range of tasks in a hospital setting.</p>
+</li>
+</ul>
+<br>
+
+<ul>
+<li><h3 id="Social-Interact"><a href="#Social-Interact" class="headerlink" title="Social Interact:"></a>Social Interact:</h3><ul>
+<li><h4 id="Touch-Penguin-Arm"><a href="#Touch-Penguin-Arm" class="headerlink" title="Touch (Penguin Arm):"></a>Touch (Penguin Arm):</h4><ul>
+<li><p>Tactile interaction has been identified as a key factor in enhancing the sense of realism and presence in human-robot interactions. It can facilitate the robot’s ability to convey lifelike qualities, making it appear less like a machine, which may make it more easily to building trust and engagement with humans.</p>
+</li>
+<li><p>The ability of robots to engage in tactile interaction can facilitate their performance of physical tasks such as assisting with patient care or therapy. For example, robots designed to help patients with physical therapy may need to touch and manipulate the patient’s limbs to provide guidance and feedback on exercises.</p>
+</li>
+<li><p>Robots that can engage in tactile interaction can provide emotional support and companionship to patients. The robot’s ability to respond to touch can provide a sense of comfort and human-like interaction, which can be particularly important in hospital settings where patients may feel isolated or lonely.</p>
+</li>
+</ul>
+<p> In conclusion, the ability of social robots to engage in tactile interaction is an essential aspect of their ability to interact with humans in a meaningful way and perform a range of tasks in a hospital setting.</p>
+</li>
+<li><h4 id="Emotion-Express"><a href="#Emotion-Express" class="headerlink" title="Emotion Express:"></a>Emotion Express:</h4><ul>
+<li><p>The expression of emotions is an integral part of human communication, and the ability of social robots to express emotions such as happiness, sadness, or empathy can foster a more natural and engaging interaction with humans, thus promoting trust and rapport.</p>
+</li>
+<li><p>The expression of emotions can augment the robot’s capacity to provide emotional support and companionship to patients. By expressing emotions in response to the emotional states of patients, the robot can generate a more empathetic and human-like interaction, which can be especially beneficial in hospital settings where patients may be experiencing high levels of stress and anxiety.</p>
+</li>
+<li><p>The expression of emotions can facilitate the robot’s communication of information or feedback in a more effective manner. For instance, a robot programmed to provide physical therapy can express positive emotions when a patient performs an exercise correctly, thus providing positive reinforcement and encouraging the patient to continue with the therapy.</p>
+</li>
+</ul>
+<p> In conclusion, the ability of social robots to express emotions is a critical component of their ability to engage with humans meaningfully and provide a range of services in a hospital setting.</p>
+</li>
+</ul>
+</li>
+<li><h3 id="Programmable"><a href="#Programmable" class="headerlink" title="Programmable:"></a>Programmable:</h3><ul>
+<li><p>Programmability enables the robot to perform specific tasks and provide customized support to patients based on their individual needs. This allows social robots to be adaptable and flexible, which is important in hospital settings where patients’ needs may change over time.</p>
+</li>
+<li><p>Programmability allows the robot’s behavior and functionality to be updated and improved as new technologies and techniques become available. This ensures that social robots can remain effective and up-to-date in their ability to provide support and care to patients.</p>
+</li>
+<li><p>Programmability allows social robots to be customized and personalized to individual patients and hospital environments. This can include changes to the robot’s behavior, appearance, or functionality to better suit the needs of patients and healthcare providers.</p>
+</li>
+</ul>
+<p>   In conclusion, the ability of social robots to be programmed is critical to their ability to provide effective support and care to patients in a hospital setting, and to adapt and improve over time as new technologies and techniques emerge.</p>
+</li>
+</ul>
+<br>
+
+<h2 id="Limation"><a href="#Limation" class="headerlink" title="Limation:"></a>Limation:</h2><p>In general, the limitations of social robots in hospital include technological limitations, such as the inability to perform certain tasks or respond to complex situations, as well as ethical and social considerations, such as patient privacy, safety, and cultural sensitivity. Additionally, some patients may not feel comfortable interacting with robots or may prefer human interaction for emotional support or decision-making.  </p>
+
         </div>
 
         
@@ -192,10 +359,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/02/21/Design_Concept/">Design Concept</a>
             
-            
-            <a class="next" rel="next" href="/2022/02/21/Research_Background/">Research Background</a>
+            <a class="next" rel="next" href="/2022/02/21/Design_Concept/">Design Concept</a>
             
         </section>
 
