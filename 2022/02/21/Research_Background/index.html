@@ -132,6 +132,71 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
@@ -154,9 +219,7 @@
         </header>
 
         <div class="post-content">
-            <br>
-
-<table>
+            <h2 id="Literature-review-definition-concept"><a href="#Literature-review-definition-concept" class="headerlink" title="Literature review(definition concept)"></a>Literature review(definition concept)</h2><table>
 <thead>
 <tr>
 <th align="center"><img src="https://github.com/AllenKon/pic/blob/main/Pressure.png?raw=true"></th>
@@ -188,7 +251,104 @@ Pressure sources in hospitals
 <br>
 
 <p>To expound on this argument, imagine a circumstance in which waiting areas are overpopulated and the waiting atmosphere is unfavorable. The aggregation of individual and collective unease in such circumstances represents a potential hazard to hospital systems, and can lead to adverse outcomes, such as interpersonal conflicts. Our group posits that by exploring the capacity of social robots to mitigate waiting anxiety, hospitals can potentially address this source of pressure and improve the overall patient experience.</p>
+<br>
 
+
+<h2 id="Case-review-social-robot-in-service-environment"><a href="#Case-review-social-robot-in-service-environment" class="headerlink" title="Case review social robot in service environment"></a>Case review social robot in service environment</h2><br>
+
+<h2 id="Field-study-in-SUSTech-Hospital"><a href="#Field-study-in-SUSTech-Hospital" class="headerlink" title="Field study in SUSTech Hospital"></a>Field study in SUSTech Hospital</h2><br>
+
+<h3 id="Interview-Nurse-and-doctor-sort-out-code-represent-situation"><a href="#Interview-Nurse-and-doctor-sort-out-code-represent-situation" class="headerlink" title="Interview(Nurse and doctor) sort out code represent situation"></a>Interview(Nurse and doctor) sort out code represent situation</h3><br>
+
+<h2 id="Field-observation"><a href="#Field-observation" class="headerlink" title="Field observation"></a>Field observation</h2><h3 id="1-Hospital-Access-Process"><a href="#1-Hospital-Access-Process" class="headerlink" title="1. Hospital Access Process"></a>1. Hospital Access Process</h3><table>
+<thead>
+<tr>
+<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/561677814912_.pic.jpg?raw=true#"></th>
+</tr>
+</thead>
+</table>
+<center>Hospital Access Process</center>
+
+<br>
+
+<p>The outpatient procedure of the Southern University of Science and Technology Hospital is as follows:</p>
+<p>A. Registration: Patients need to register at the registration counter, which requires providing valid identification documents and medical records. The hospital provides both online and on-site registration. If you choose online registration, you can make an appointment on the hospital’s official website or WeChat official account.</p>
+<p>B. Waiting: After registration, patients need to wait in line according to their registration number. The hospital’s call system will call patients according to their registration number.</p>
+<p>C. Consultation: When it’s your turn to see a doctor, the doctor will inquire about your symptoms and examine you accordingly. If necessary, the doctor will write a prescription or an order for medical tests.</p>
+<p>D. Payment: Patients need to pay all medical expenses incurred during their hospital stay, including consultation fees, medication fees, and medical test fees. The hospital provides different payment methods, including cash, credit&#x2F;debit cards, or mobile payment options such as WeChat or Alipay.</p>
+<p>E. Medical Records: Patients need to obtain their medical records, including examination reports, medical history, and diagnostic imaging reports. This information can be essential for future treatment, so patients should make sure they receive all relevant documents before leaving the hospital.</p>
+<p>F. Medication: Patients need to get medicine at the pharmacy with the prescription provided by the doctor. The pharmacy staff will verify the prescription and medication information to ensure patients receive the correct medicine.</p>
+<p>G. Medical Tests: If the doctor writes an order for medical tests, patients need to go to the designated medical testing center in the hospital to undergo testing. The test results will be promptly returned to the doctor, who will use them to determine appropriate treatment.</p>
+<p>H. Discharge: Once the payment is completed and medical records are obtained, patients are allowed to leave the hospital. The hospital staff may provide instructions on post-hospitalization care, such as diet, exercise, or medication instructions.</p>
+<p>I. Follow-up: If the patient needs to return to the hospital for follow-up care, the hospital staff will make an appointment or provide instructions on how to do so.</p>
+<p>During the epidemic period, hospitals may have special procedures and regulations. Patients need to pay attention to the hospital’s official website or WeChat official account for any updates. In addition, patients are required to wear masks and comply with the hospital’s epidemic prevention measures to ensure the health and safety of both doctors and patients.</p>
+<br>
+
+
+<h3 id="2-Hospital-Waiting-Environment"><a href="#2-Hospital-Waiting-Environment" class="headerlink" title="2. Hospital Waiting Environment"></a>2. Hospital Waiting Environment</h3><h4 id="Type-I-Waiting-to-Be-Called"><a href="#Type-I-Waiting-to-Be-Called" class="headerlink" title="Type I (Waiting to Be Called):"></a>Type I (Waiting to Be Called):</h4><br>
+
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/571677814939_.pic_hd.jpg?raw=true"></th>
+<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/621677814945_.pic_hd.jpg?raw=true"></th>
+<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/581677814940_.pic_hd.jpg?raw=true"></th>
+</tr>
+</thead>
+</table>
+<center>
+Hospital Waiting Environment Type I
+</center>
+
+<left>
+
+<br>
+
+<p>In Type I medical settings, patients typically utilize the waiting area while they await their turn for registration or consultation, or as they wait for the results of medical tests. Patient behavior in this context commonly manifests in several distinct ways, including: (a) maintaining a seated position, (b) standing up and intermittently monitoring their proximity to the consultation or registration desk, (c) engaging in minor physical movements, or (d) approaching the aforementioned desk for further inquiries or assistance.</p>
+<br>
+
+<h4 id="Type-II-Waiting-for-Your-Turn"><a href="#Type-II-Waiting-for-Your-Turn" class="headerlink" title="Type II (Waiting for Your Turn):"></a>Type II (Waiting for Your Turn):</h4><br>
+
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/591677814941_.pic_hd.jpg?raw=true"></th>
+<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/601677814942_.pic_hd.jpg?raw=true"></th>
+</tr>
+</thead>
+</table>
+<center>
+Hospital Waiting Environment Type II
+</center>
+
+
+<br>
+
+<p>In Type II medical settings, patients primarily occupy the queue area for the purpose of payment or registration. Patient behavior in this context is frequently characterized by various observable activities, including: (a) engaging in minor physical movements within their immediate space, (b) utilizing mobile devices with their head lowered, (c) waiting alongside accompanying family members or friends, (d) actively observing their surroundings, (e) preparing necessary certificates or documentation for the nurse outside the queue area, or (f) requiring urgent assistance.</p>
+<br>
+
+
+
+<h4 id="Type-III-Waiting-in-Wander"><a href="#Type-III-Waiting-in-Wander" class="headerlink" title="Type III (Waiting in Wander):"></a>Type III (Waiting in Wander):</h4><br>
+
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/611677814944_.pic_hd.jpg?raw=true"></th>
+</tr>
+</thead>
+</table>
+<center>
+Hospital Waiting Environment Type III
+</center>
+
+<br>
+
+<p>Type III medical settings are predominantly utilized as a resting area by patients. In such settings, patient behavior is commonly observed to include: (a) minor physical movements within their immediate space, (b) the use of mobile devices with their head lowered, (c) waiting alongside accompanying family members or friends, (d) actively observing their surroundings, and (e) displaying lower levels of anxiety-related behavior.</p>
+<br>
+
+
+<h2 id="User-journey-map"><a href="#User-journey-map" class="headerlink" title="User journey map"></a>User journey map</h2>
         </div>
 
         
@@ -235,10 +395,10 @@ Pressure sources in hospitals
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/02/21/Stage_1/">Prototype Stage 1</a>
+                <a class="prev" rel="prev" href="/2022/02/21/Design_Rationale/">Design Rationale</a>
             
             
-            <a class="next" rel="next" href="/2022/02/21/Stage_2/">Prototype Stage 2</a>
+            <a class="next" rel="next" href="/2022/02/21/Stage_1/">Prototype Stage 1</a>
             
         </section>
 
