@@ -132,71 +132,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
@@ -219,35 +154,18 @@
         </header>
 
         <div class="post-content">
-            <br>
-
-<h2 id="Design-Needs"><a href="#Design-Needs" class="headerlink" title="Design Needs:"></a>Design Needs:</h2><ul>
-<li><p>The social robot should provide a representation of waiting progress for the person</p>
-</li>
-<li><p>The social robot should provide relevant information about the patient’s status and estimated waiting time in a clear and concise manner.</p>
-</li>
-<li><p>The social robot should provide suggestions or options for the person to spend their waiting time, such as reading material, games, or relaxation exercises.</p>
-</li>
-<li><p>The social robot should have a user-friendly interface and controls for easy operation and maintenance by hospital staff.</p>
-</li>
-<li><p>The social robot should be able to detect whether the person is ready or willing to interact(referring to the waiting pattern of “waiting in wonder”) </p>
-</li>
-<li><p>The social robot work as a distraction, or engage the person in a distracting activity (waiting until it’s your turn).</p>
-</li>
-<li><p>The social robot should stimulate the empathy of the patient toward itself. </p>
-</li>
-<li><p>The social robot should allow for the person to withdraw from the interaction anytime(referring to the waiting pattern of “waiting to be called”). The interaction between the social robot and patients should be light and flexible. </p>
-</li>
-<li><p>The social robot should not disturb the original waiting procedure</p>
-</li>
-<li><p>The social robot (between a companion and service robot) should helps mitigate people’s waiting anxiety</p>
-</li>
-<li><p>To explore what are the ‘effective’ interactive behaviors of social robots in emotional communication and social interaction with human in waiting environments</p>
-</li>
-</ul>
-<br>
-
-
+            <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="6c1a4cb89f529b5775cd36807b5abd28ffaa32b3b71d88af47eb92b723b585c7">4488723321122b04f3fab8ad746761e076b27548d5e1b3bd1e42c3be1122bd88ea76507a6400448cc0a5208f3219652c45b1b4d8bc52570e2f64935c137615014a7babaccc7b5ff30ae57167e7653b8ee5c8c1c5cbeb83e3fd6007b99e9bc70df87cc1ae6bbf3aefe2706e92bd2b28790a854e7ee74ef4fc8f003cda607ee224e1d215ca6b210987abb07f301f44b440e660a944b27e428ab87118957d16afa65b72183513f72c92d4c8b98f5ca593e8a2749f25a807a1614653cc3fdc7918472e49b02f0aeeda2822ca8a57e44bd071d4346587c46fac0017b09eaaafd78d2adf4c3470653698ff7fb80a76028e0dbb0274883fb5a24b3cf75c5b6582c24244940b0ca6e19a36750b159fc455668354b845dbbe9493824598cb4b0ad56f609182f04a90b277fffa1471da53cb4d898d9897bf5b25206e3f822424abc715da3d8f3d6329039e8c3d24d42226c110db66181a961ef3a20fc3b4e579de56b3b39ed962b6900a40864583c4fdd4f173f524c490f6a086cd8666585dd6faf536c710979f0e47df61f619c3aaf523aceb7108a09a3043e19a5fee2b4a901e0269f09b1e1f71c03a6a0d7167b700a5461746541b4831b0d0042ae83fdd5c8f532f6af50c0d8c0e3f0eeddd5acffe6f47e74c3b01735afdd69cee6de44c46773ae046face9359d9806f6308612aefa1ee0f97d3ed4fc47a4c95a30189b79073a84d77c2e294cb844461686d4818edf122f00aee62d54db7c86e03ce2192e898a8ad36361b51d71ce86c8706f5c33aae09fbb63a2442ce0bd3ef2abf2a5748a133821be4bd73a2b3f0a5877a5a03bd924dd1aa8516659ee9f9b32e86458e7497412882c73febb68ed7c184c359f8c21e27042152b2ad6f6ccb7bfd79dda0605115af24732a922a7f4099d317d231b5ec5a61b8bfb67b2431dcf51dad9f1ab77075f55c119930b540306762613bb1adadcba18aaad398c90f647584c0c0e1e470afd7e977399387bbce33056d69480d6bc8778b31bee72c615248aca242b6100a8705a4fb8aea449b9fb573715d2cdcb7fd67d5f37d3c75f586f6655faeb9a9e5e86405f9dac9fb4839e09dc4c31b6cb9072e4815357e2a8a416598fec7c60bf16f79221f3da96cac1d7fe63f8dfa93aa3dafc5e5e04db393b2fbc3d7e0bde2d7d08e85edac1b8a98dd0370fd610237798b9acc27d54c23b0080fe056ef18d1dbfcfb9e56a2045741a42ae26d7af57b82349e44312d3d8b9a57c3fcd7eb541fbcbcea52ebd098d148250dbe6ecbb90dc67f2690fafb7d4255bafed12616bc8a6b94e4dafe19c55a3a74f32d57fecb1ed682963abac5b49f144134d78609c476ff8d33f5614ccd1599a5f481053f06d1c2a870d8c948703193c7a4a80d4640aa885f76f2a97cfa240f04415cb9ce8234dc762020371fea7ec36bb724ca6a01592efb6783528e04ac929b7cae153f19688aff4c57b58eda168f7e85612c0ab07044a0785a27a80c395e4e913ee565b2f0b9e3e167001f69bd8f0dfdde0c493ac556c8b4c0353d6629280e48581176a19b8f1af4ef2b1bc0922d1a2dd2aa5cd0d3a3e0de778759698f0d4c5d87fcb95af8dfd2cbe50468bb7c2a395f5e187e87b3cdda31ec46f12dbeae1e460e22abdf6d32cbfe607ed1efeb846315976433de87724a718b4591343649449c84d18c0324e6f4ed6433a5426783290a8df833ad834c9a819d66b5a9f7a8c0e77ce3c5a4411d60ff5a052fc2361c511d3c83a09dbe3c54a23015ce5135e9e37ce8daf9d4859dc16e1df7002e4ba1df79c2b23c9e6c8b3d88df5d52b6923d53adb0a99bef883fca69f5efbad8b135b3d6ec9299e1214bc2337f040b21d5a0575e85bc7f25b159351c1f08b915e7b4762ac3f90265307fc849be15720e32abb7788f1d0aced6c39e59b62af3b93b56badd622c2b157af98467d69978fe7b27ed6d4d4c2eaaacd109d66f4b30e599bedab2dd0e8099a7bfcee6e309408fd7873c7a8121d86d7ba16d81509bf83738498219f201dc50e577fa1cf73605e4cc965a66e2cad772b3cd73b7fe7f351a0a21163380a9874905a20c9706720c1d2077df21518c663d8dccaa73b561c41c977b149694bc0706e533b4a73244eb6fd9c7619929d1d5b066c5340707a83d30a8c57d812d4eca1a5a54cfd38a5e68e9677132a9b216c61360b3b35ac5d928eac67d9f70f34cbb3ccd426c892119a930bec3d7af4ea2565baba526367132f8122d9b2b6c510a645a322b2550b1097b2a1006b9aa44a64e21e8a3c2895cc80d6d5739ea0bd64f7087a02c419fd9793755ef1f7c762f33760f69ef08d4e1312d41a30c8f4fb8e52cd23c47b19218787a617c667cae74acdc1a0607334a4c030b9ff9cd288e28cb173079cd6c8bbfb487e7f4422c844963daf8879b80a62213f752e20c0f7ebf30f32e352a9eb9c8fbe656af2ce511428bfc6cd7bcf2809dea8c4e0747a2e04dd158d206efc556014ed2a029c322a3daabe29bfa686aed3104</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
         </div>
 
         

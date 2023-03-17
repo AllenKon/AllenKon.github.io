@@ -132,71 +132,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
@@ -219,106 +154,18 @@
         </header>
 
         <div class="post-content">
-            <h2 id="1-Hospital-Access-Process"><a href="#1-Hospital-Access-Process" class="headerlink" title="1. Hospital Access Process"></a>1. Hospital Access Process</h2><br>
-
-<table>
-<thead>
-<tr>
-<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/561677814912_.pic.jpg?raw=true#"></th>
-</tr>
-</thead>
-</table>
-<center>Hospital Access Process</center>
-
-<br>
-
-<p>The outpatient procedure of the Southern University of Science and Technology Hospital is as follows:</p>
-<ol>
-<li><p>Registration: Patients need to register at the registration counter, which requires providing valid identification documents and medical records. The hospital provides both online and on-site registration. If you choose online registration, you can make an appointment on the hospital’s official website or WeChat official account.</p>
-</li>
-<li><p>Waiting: After registration, patients need to wait in line according to their registration number. The hospital’s call system will call patients according to their registration number.</p>
-</li>
-<li><p>Consultation: When it’s your turn to see a doctor, the doctor will inquire about your symptoms and examine you accordingly. If necessary, the doctor will write a prescription or an order for medical tests.</p>
-</li>
-<li><p>Payment: Patients need to pay all medical expenses incurred during their hospital stay, including consultation fees, medication fees, and medical test fees. The hospital provides different payment methods, including cash, credit&#x2F;debit cards, or mobile payment options such as WeChat or Alipay.</p>
-</li>
-<li><p>Medical Records: Patients need to obtain their medical records, including examination reports, medical history, and diagnostic imaging reports. This information can be essential for future treatment, so patients should make sure they receive all relevant documents before leaving the hospital.</p>
-</li>
-<li><p>Medication: Patients need to get medicine at the pharmacy with the prescription provided by the doctor. The pharmacy staff will verify the prescription and medication information to ensure patients receive the correct medicine.</p>
-</li>
-<li><p>Medical Tests: If the doctor writes an order for medical tests, patients need to go to the designated medical testing center in the hospital to undergo testing. The test results will be promptly returned to the doctor, who will use them to determine appropriate treatment.</p>
-</li>
-<li><p>Discharge: Once the payment is completed and medical records are obtained, patients are allowed to leave the hospital. The hospital staff may provide instructions on post-hospitalization care, such as diet, exercise, or medication instructions.</p>
-</li>
-<li><p>Follow-up: If the patient needs to return to the hospital for follow-up care, the hospital staff will make an appointment or provide instructions on how to do so.</p>
-</li>
-</ol>
-<p>During the epidemic period, hospitals may have special procedures and regulations. Patients need to pay attention to the hospital’s official website or WeChat official account for any updates. In addition, patients are required to wear masks and comply with the hospital’s epidemic prevention measures to ensure the health and safety of both doctors and patients.</p>
-<br>
-
-
-<h2 id="2-Hospital-Waiting-Environment"><a href="#2-Hospital-Waiting-Environment" class="headerlink" title="2. Hospital Waiting Environment"></a>2. Hospital Waiting Environment</h2><h3 id="Type-I"><a href="#Type-I" class="headerlink" title="Type I:"></a>Type I:</h3><br>
-
-<table>
-<thead>
-<tr>
-<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/571677814939_.pic_hd.jpg?raw=true"></th>
-<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/621677814945_.pic_hd.jpg?raw=true"></th>
-<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/581677814940_.pic_hd.jpg?raw=true"></th>
-</tr>
-</thead>
-</table>
-<center>
-Hospital Waiting Environment Type I
-</center>
-
-<left>
-
-<br>
-
-<p>In Type I medical settings, patients typically utilize the waiting area while they await their turn for registration or consultation, or as they wait for the results of medical tests. Patient behavior in this context commonly manifests in several distinct ways, including: (a) maintaining a seated position, (b) standing up and intermittently monitoring their proximity to the consultation or registration desk, (c) engaging in minor physical movements, or (d) approaching the aforementioned desk for further inquiries or assistance.</p>
-<br>
-
-<h3 id="Type-II"><a href="#Type-II" class="headerlink" title="Type II:"></a>Type II:</h3><br>
-
-<table>
-<thead>
-<tr>
-<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/591677814941_.pic_hd.jpg?raw=true"></th>
-<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/601677814942_.pic_hd.jpg?raw=true"></th>
-</tr>
-</thead>
-</table>
-<center>
-Hospital Waiting Environment Type II
-</center>
-
-
-<br>
-
-<p>In Type II medical settings, patients primarily occupy the queue area for the purpose of payment or registration. Patient behavior in this context is frequently characterized by various observable activities, including: (a) engaging in minor physical movements within their immediate space, (b) utilizing mobile devices with their head lowered, (c) waiting alongside accompanying family members or friends, (d) actively observing their surroundings, (e) preparing necessary certificates or documentation for the nurse outside the queue area, or (f) requiring urgent assistance.</p>
-<br>
-
-
-
-<h3 id="Type-III"><a href="#Type-III" class="headerlink" title="Type III:"></a>Type III:</h3><br>
-
-<table>
-<thead>
-<tr>
-<th align="center"><img src="https://github.com/AllenKon/pic/blob/main/611677814944_.pic_hd.jpg?raw=true"></th>
-</tr>
-</thead>
-</table>
-<center>
-Hospital Waiting Environment Type III
-</center>
-
-<br>
-
-<p>Type III medical settings are predominantly utilized as a resting area by patients. In such settings, patient behavior is commonly observed to include: (a) minor physical movements within their immediate space, (b) the use of mobile devices with their head lowered, (c) waiting alongside accompanying family members or friends, (d) actively observing their surroundings, and (e) displaying lower levels of anxiety-related behavior.</p>
-<br>
-
+            <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="624d0fcbe6040f3e79e3dae64e5ca385db8d132ca78801fe2ba7cb2c9c3b4e67">4488723321122b04f3fab8ad746761e079ae92cc0190935a21aeb178087daf60cfdbe6031d6950e82fbe4a66a857b733f79ac17e33112b1e8b16ad68f55eea85995c4a85f4fe71879be32e0d530626f676c69373b90e9f72cb521f3934b49f78e242e33b122c7d6b6d6ea57263e44c67b58034305c012f39d8259edd12b7ab8f9cb02fcb90b3c69f8956244b43d9a1b1227111e6db5a6e9aeb4cfe11572dd48b6298fad41aa9d26b3e0b73f4c0e863c1a0fafdc52e3c2b1f42884ba7cd8d1fe2866a3491f6d1819f66c412844bd2f3223ef2a76854c425e400a4db7bafe46aaf7884b479f5cde1b78cb8d797928acc2e1684ecee94b93bc58ad62dfccd2fef8d98c5ff798f518e6d33ec250d4e70e6ed804e684e21ff2f235a13e401f1a31b047a57133032093a149cc7eb8722a934b2617b8ae4587c8387a1d4c67436b000bf4fe708ac0d33adcfbc6bd31c8a8e37cb85cdb4f481d8745442895e9155195e6fc782cafdd4eaa8df67d19b0e47664c8f7fb4afb67e54b92c3c67ce191c9245ff2510b441340c651fe8c2a51951912e5099e04ebe917685048c7d6de0e6461e629f6d66fb80b64c4d766e29c032e610008eea14e041c972f8f409ab031d9c1b0dc598296376c0c40513bc0deec2aeb127bd33157b778876f72870a118374af3d99d0963aa9f1499b528c2b1e30ac715366790fa054e60713e456ad00384bfcdc27d4f0177b136d83c5b3fe900a070b8963c4b9fb63c28e32b490b9e32be3ba9c29bf057e73b9cb22580fd23022b588a862d51cf02af2b1cd0c25d6a951b46510313e622e77ada07bc288bfce8fa0b3446439126a856e5314ebfec81cb3ec10452eb09240b37012a50617bb35c51c41c1ec628d8f21902c7e4991e6e8cfc62b186b587c3d29036bed3ce3f04f10905dd832839b46bba23e3b36113c4342ab27a3a34cae4e981e4078ac41aa84bd0729031ed306d000ffa73716f83682c7180c87de6b301e8454ed5f11ed0fdff51f002b80af12901b75d2c0c76fd542ded99f8617c94198b5d267186353a1f4f47028a13a1ff7bf388379763a87fb6100fc5eb6d284d879cc0d744251c993eb661605e1abbe9e9d8dae047363daa372b48db2789c353b04e246b107494d781ba887ad37b07830958d9fccb0796168530f6d7f104c74b86379ca2cfad7d161a1c32d3c7411d9775f9e3c9971c2bf3efcf68d9a16a836e0b2196782cb6c74bfc6bcff181babb2a77de3408a2a7ee1ebc739da851daa542387befe3d78a3604e236a39a5a2ba9ca77c4218d0d4c9332383c5e762058867a3017d5528629611aeac49c6d458ae70ad97532964805155a1f08f9e5ce9f26227d59c22052f2d1400d4e079f0cb25effd6d0b3b6b1f9b61f1a84e4d94b9973ec75ac71ed89999307040378cfa043c5a5df01abbde3b899aee99e31b60a0e48f81d17cbbfcb704ff4c08e7355cd69f100abb5a2a4830dd02c4ff8ef0b16c758e9996aa6c7c2853b49784f568883e6cee6c26aee68306a35ba9ffddd78ead5fe7042be71c766f9415858d39ca259f28e31288e4d41441c17a7c291820d21cf7679e372245852d8469bc441417c50d87a43b27319ef3b5955c763ea3a763464636cac2008bf8a36ee2af0567e7f4f5beee1b6035f489b532586c2500c9e12e93af35585ec83a11a099b6471bf1414081704e8a062827dcf9922415b5d7740b468be9ede51f40f79985b0618cc69debbd829737427ddfbd68979ee55e4477f98a24193325f213bca1542573caa0af8d438f3e5e0622751cb4b98612c7c80474944b6ccc08a30a3d87e0055c46adec6330b1382b2328ab2c39a8eca08b9ac4461809b779882e02b54e64b425ad635e128c31e6d96105aa55a840c73d0564acf38de53b2ec44ac210512317a8a4f5b9439e41db06aea5e883beef123b726b70106579e8c832d75b189112b437268bc9d2c65d80f58522ca11c4aa80f771163deb84698b6d3f0f51667d4e29ff46f2413405b7e79bdb15f24fc2acfa6e64de158fe4c8db650ca8aab255c28efaf96c3da5148d72aaa042c427fe123b6aef68025bd1e3e8dc0b010c0efbc1540acbccd54b5a9ec08c0664fe651df4f1a648c96225244f6614c33fd13cbdaefa62f3a87f2bf81ae971bfd05f62dd82a3270a368a71eca48d3b5ba16bc467b9b12a9fa13522a1573d36987d890734e5ff10860d37b1c3d7bbff2c1bc3b7b363287263ea4c63066b7fc8b02a09fc530b23faeae83570357ca01562f667ef283097eee640f605ea0c82fa4d889c38d4cf7937c0393e9742315b4d34ed5c6fb046bb4518bd36d6aeed789dfa1e53dc254a511740a241609493ac7fbe2d914b86f2c09d4f335f9777853de7cbc60fd3c5a43487f12b0fb2a0c6d1275005c9519c445c9014788a782e91ed597a41ba26e4e7373aa389c595b2af83fa15d804242adf3ae30be6b1b7bfac3e91dd87817b3bf5906ba9c80fdff17b4ce2c61599e332bd164c0051f96049edff328a0d2be1abf68cc08342f74135086011b1ea1de8ee3cf7b21d0f8af6a41a0f3f42438687a43cb4ea3087cfd290e6231865ef18f0a2049f105034109462e3320c54657fa04a600c9a53982d6d635244fe73e3700f202814f6d195508b089975574a81a1baf3ca359daa77186599be73567c145790e2916c316d009e4a95695d306734719141bc26a5ecd2fdc43f72368bbca3ec9fd00dcc6e15c9a5f36c94b4a080518d796500574b25ec8b1cfbe40980c9ff03fbdc0677d67ae483ce4b8e4b0a8681dcd0ab459119d6bd9763edb5699da42980c752ec6fa5204b2480cad0a230f0ceb5e5cca46e98e5c8f090145052f88feecc8a56802b1c506beb0e6ee698b233ce932e1296716a855066caf2c591f12eb082e05212b1f8ac84d310f9d6ac2351527aa326df088ca5efa4a8cd54c4815c733d2bfeeef34c2df6862bdd814ef4b76f518610c65ae86ed6b45e92aa0a2f02762dc1a7029c5e1e1533701b193560941b26bc9274d5835651ae5278bcf0fc73d13f04ad96a0d897016dc2887c2c246cfb0baa0a6f6604e369fb87ed7dbb291dc65462c1a3063005b99a24890526d4c2b919f42d78fdae7e05c650051fb755e9f3bba42ee38fd965f8e756aeddabaf32c5feb74301b00405478095673e8e0e5f7f2c784e903714b614f9510e4a4500dab5c422332549301a7cec73775c393c0716565917b69ac2aa61db3c18afb90b0df85ea35849e0adb58cb1bec58030f63b3d455f2bacd088ba2a9d8cbc1d9ae94ee68eec3e90ad6770788292e5dc8d6a17d8c31926bb7378a8e9a6bd71620bf65dc264a271e90b883749f4c86d55be698c21c19f3d7cac1e62cbd912523e606c592ac55cb981c89c09e488c8ca2038e071e9677d403244c4ebf1a08f8e14f67ab7b6e2905a8e5682903bf222fe00ef516e0fff2af40ef483b120141de9d009d685f74bd944d3ce47dcfed253f9d399f2b4116749b62743fd943086285b1b9a5763065f27a3a044efefc85a05ed08e617957749bd49812c372074a005f744ae1312b420ea24612b16e60df19ac67c7af9a009cafeef92ceb9adfcae40102c6462841d10e5e9cff6816023dbb4865712707211e4f8fbe5cfde931dbf668855273450de4e9aefb58c90f3d412cce815dbc2c5bee522557bd4e373ac6d67da7180f8d6bcb2017f66344201dda56e3cb362ace1c1c92206f2688c68acaa4cc85a2241cfa8b67d712465d0c0a6b45544a839e1d1d72842649fa5803d5c09f70bfc1179ad565e04b39803e83952f897db9a9ed056b9d38c1dbf513bc6a779f3f77d37bcac88c58b1a1469af74667a4d92892215d6e4ad331375750a10b097efec08dee158aad028a1db48d61c676efcf54bdf335a09aea55b1108e8c575037687de6800c10db6215607a1be0c20b338e40b773940b4b9c1a2a865eba4f23737f0fe3071164dc885eb93c89a416e7c3f2b1cb4d8434996733c35d37e6b93c14cb1b5a5c065ce0fec3cc9709d66491b17c18f5980ee201147caf29e429c1def84951ae1004a1089842d35471f9fe32183d521ebe2224d272b9e6dcf4f46ac58f7503a9b7c7e1d447efc363199da2f1a7e93d57d5e3b67dea9d27a8aa124f253fee9ad9250eccee900536f99ae3bee85be24cb527eab86810b2a194f684d6c27f8cc5446cfd19ad6b7a05b59308c1bfeea736d3aab11c8a1753ec828f875d38d4da8da214ed77876f64327305353e038cd2d872662d3727f43c2d2da14a08d627f592dc076ad876f2308480f3777e6c03d64e981e2994717d29d4b585969f6ec11cc14fa8399b9ddccc9043e0e923ea529f37d8f25bc76f0b3bb57b97013b1b27f21738ba3048431ce9c3aa9ef80eacda50e47bdc05e5ead546fbf10b05a04a3284cac19350459406d97b5d8c67815175b18310eae34fa59168952aac1039efee2adf218ae96bf27605365b21ed9567d9ee71b30dd1fc6e0bf8fc1081f0e0a3db410944a271e82ba5a41742a0fec9cd7ccc72e94448187e1a60bc63cab291b5912fae66f992fb197fa6021ebe6cac7637226cca497daef0c9a3cab2268a131c806d3118d38de2cf0a465a9929e9bdcb4bfd5011532fb5de69c82edee9012f965c02db6fbe069187bfd3515c6c6cccd60f5affdff2cc0f586a60ecf42f34612ab61be9f73e1b8908663b7b760457e8796f40e97c535579c9341e0091c7a62cb99e577d1af90cc7f11d02a23ab3b616836ee6f75836bebaa77e7f4cfc38fd29fa5a5c2d3c3954ce5b289f580dfd1ca6adb3d48c3eaeb6237691950cd91a653b864f268dde381350196c7cd7ff97b387e8e31ed6490618241e9d2bde879f5822db386b845e15dd9f7d66f0075c9a8c4f2a5a9fbf14fa66408164a38b161c5a411eff257c1fdcf81e353fafb0c1b748a181277d8fae2c2cdc406c55476f5a9b5de9b2db6d3e4d54e34b176b4a1c0816264e87596e0db18b171d79cb3dcced1a690c3da38145e7751816de347f13026e67cf0c15bd153dbab70cca0dab9f356783fb98ce02337940373f4fd320893b451b14f2abb8985fcdcb94f52b1d2f77e09af6948ae10a5e3f9814e8ae8aaecd4abbe22833a678ee3d6a9fa6e051d5da114918678cc800e5890eab64cf494d9e5f4030f182075ca1c590ec332af6ddff019d3671c31c7ccf97f28dd2c446ddc2f2fd610564bdbf60ae6e55d92ddccbccc4c09a6c1843e0dd23591120df1e16bb2b6f1eb0d222eb99df8ea33ba6b179bfcb7e57414a7e957db9b52fa66d280ac365b8efbd919e0b7b499afe1b86beb109489206f146913ce2436945f12b0f613f97df290bbeb9632ca645deca648b1c12d1895cb492e877d7762d9f2ce6efdbfd231a81a67315bf0a17bf70ce86aa59465672802928285d1653f33cc9ff73174ad4c896f4fc001dcd69d15a02c41046f3b1d4000b3cda5781aedd66ab917af3c2c2848dddd85a05ebcdf8369428f022885a0894ae977e43040c1ea61f1d43a4fdb043d459820fc2a99188c43ba2c80273b790568dcdc8e629e508f7e3d17f872c128c49f0f2d4491b489eb396fd3aa7e755ca317912f5c0e393cbabcbcb066af8f542fcaf4f12c30076aa58fd08768b83599965a7909f86d90a2855e1b91b9ea2d8f4a8bd1ecf1def5b4921a7da7d13fc7f8c29973b3d3d2996acab17d370eb91b143986c5fe870f68ad60840a0858ae9190c488ad02316bd9e7ab71d3a16b9c4e248471bfe4d892ba01be8097a60cf4772da23c2cdd9a3b6ff14fad4163cc3831a58caa301f40df4d5c30bb85ff5c2f50449a078f713c04f56a11aa9a04ad9ca19788607346fec6a4364e103ce46de8731b16656187a8c16517720b27c4b97ae7fb09981766e53d65d3f277866cfd494f3dea035ff78b03a9b4ede9269f6197a18bb7e795c716e1df9dcbe3d1d1e8c04d0971a914a01bce8a29ae299e88b0ea95317d5748e0a08daeb568f7cd4fdf5469134ba0dc147ab27f606fd6df0cfe333f02cfb01791e4866ac6223919171e3a87d58a454e32be53ac1274e1086522c2f952e5bf7bb518647b49ece4c1460b2f6ead8b15b4ef349a38f419dd3cb98de53a53d66ac5b868c57b0c0f730c69be104308d648f52946d6a2bb7a16e7c9f245943783858ade155d15687b70eba452323a80f7cee681d565dc789a4f675b40012bf63d2995917809adf3a37f12143573ff280b4ecb9eb786b1114de47b45d8545b85074d6a99e8f167abddbd93f93d2eae7f0e37ecde1615c42c533fee3acd693d6eb716b99b2ab0e8f294984eaabb9251e9d26793cc7a2ddfd7ff20bae843ff718afbe96133a1cafb4f190395cb4ae20b232bf0a5d8fcfd644e44a7f2e242cd870be5afb32accc44ed7d3d9eae4085ab0f438d949643f9f9bda976074df59c98d969deaef3ff130e28377bff3fa1308b6b2198ba99dd18abf5761b5a28eb3a171021d3774f119b527fcb0c597b88a2ec47767f36165f10dfb70de5157cb4221912a2c1ebfca20973a41edaa556d4c09b19cb1a0a7057c66d54e482c75d93dc4df03ba04f41e7ef2d00dabb96b64bee9e0be704fb0fc091d5104343744d6d85869c94b6cd0be9538107927a8aa5f4d75e42878f916dff028caf9217319b00770dfd5d72783780296602270929ae7c657fcf352a0171907bd1054199a8ce601f940350926cc32a584f84724d4d183d5ed5d97bad202a2d7caf7650e6570dfe0ee80550a70f56d2b714c29da02f77f42ec695b69ad0332ecbd445b22d3403d96b9bac85724a710e7e680299bcc43591d2bf95a701348799a0acabd855e3628b2cd74765926bd522c878607022b3ac3db1f21e09adcba321f877651a563caa0ff7a0a41c418aa52cfa455385fe609da22233396ee70397fb811b643ba4a447e9cafa4548788e883c248b15cf3bef895faf91bb98747c06ea6c4036b999853610265938bcd51ec825eafe232c6ba4a99b2756258f8ab06b8da74dc0547dceeb2f654dbcd05bdddb41a6101ad021631644bf71dae6a132f9ec9922066cf8f54e35411b8693d8084f8df874f779f487600a8c6e9c3478a8fc534c49f5557859f88ca760a3d64efe34a90b980be0262798ca87d783ca442a46e0b0ffd4308e4f755e84bed51c0af759bdfd8e581df393581143e56633129516d2fbcd81216126e68ca98a4636ce929c81bd01d4ceee8becf4d7ea724ce813a1eafbc1bb6168d27fa8e1b2e470d6a5ebb08c7ad089d786619b54ebb28548462bccbffabfb22247fb210ecac783586e1e5397ac68bbcf3127edd8cb6629ea2f9ab086b0206de6df19116b3feaf195905112c00a48218d716d9df264d13300b5e377c764f63114a3fc39dcf95c11406636869976ccd08cecb7c28b73928f7232156f98b58f33e5f9ccc1f77153d9a9fc3ffab0429c0042e1347899f4428b4eea50289c541039784b7c5f0a26f1dad7b0e70c903e2d14d33bd017fb0cb111de25d27fdfec878e7289965154b5c62fee8f81fc4f3ca7e057e89e031dc3af6798ef85615d48340a46e8c89811008322f6eed11ffc14bfb49fc91713035834fed0d84642e14ce8bf5d598672ee2339014da95f79fe720d6c7ab6b4779935a6d224149f2b237f2f1a2cd4985de9a29c8076ef0f9259dc0f216bbbf4cb9b5a2bd7387a6e2589bb6e1979c885de37643a562f8f9efd197c12d74d1328d86472b5ce35f12a59b4132e431089b3b3eb4fb7003430284ed6d7eeff84ee5e0ef639428c387ad80939a08bf0da6aa61846b1433a345b9146701d85d7d4bc82a3a54e4c37a1d500cffccd1f20ba8cd25d4b91863f3416bed902f7d220dfe27aaf33e2a11b3cef33dea12564a6477f11fb1b9e76b18c487b41f2e17bb7458432b351dbcb7e2755f5ebad652ce2b79f4fdd984feeb3f279ddd531468b03115df21cb2cd3279aa2a4c93c0b6044b90ba360e9789541d89cb7c8bc4453ae801e11c840bb10549d164f5b92bca3f1fc0239bd35bf46bc9f40e57d84cc9729d6742fa59c46884a1acf2820bd786247eda30a34c42f377078a5436011a7374f87e27559743b33ef9863108265fa06f7a3efc3ad03444e549648dd8c187dfbaf086dc36820c9b2d92506f97e5fd5a373f63421a64321d2ddb6902a89e4d2e6ff356600cf61357287bfee579d1e065cbdca3d850cd045f04fed808cee1c7a6cfc48c4529e13f98264fe6895a46d4c26a1119b9cbe96c67ddefc5ba3804bbadd5151c24815d7466c4ed9e8f1d7b4f7d81dbf8e5c68e7cd4f6f654ab0aaf699da23422260d6cf1792d0bef334288d54c509550377b2caaab0c2928367fc858a79ce8c12f4f422b408310632eca690481e9b9846572313a98cad94e78b15745ea1a7766d64fb4004612de4b7e895f5c579a6745bfda502a549e0715873c8c84b47ee91ced752307e4d8b31de49d77c6e34e3931e0201acabb76e8dc002718882e95fb48e49c5ffa04b43f2e75d860a22a13608291f0fa8bd0e8b3a830e8d3e9b2a87c8e12c399d168f1eede6e17132605f3331b54aa579df1d9149c128ed9057af1de9a02b848d4f27bc9716c5b268801010ff82ddb9cd0346dd708468774440207e2de83b54c836731ada2f5ce7960c82d0eaa98f1467025ccad26a24ab6760cf0f04012ff935850a6a5380950b44af801d14f5e852d46d4879ccddf8d2ec2b8422910f72f62e50fde47cc7e7eaedc2bb68c06e1443722c38db9771c6cde0cbc98b3eb3b9cd9ea1b35c90071fd6b2c2495e57047f7b4cbd31790276d3599be6c4e928f43e65de9c10d336fb79af44b60ae76d140e6da1dbb23ee73aece6e5b0cc0f335a39f071cf3b33c9eef0b3dee396366ccba8844aec49acd81b324141c3de5419a9890767d346b75d38180aa1f6a80335d85fbf22059a1351840ee770a97a2f97362ddc9079b4a313b749e5375a98a0e2af02733db6218d7b6e56f</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
         </div>
 
         
@@ -368,7 +215,7 @@ Hospital Waiting Environment Type III
                 <a class="prev" rel="prev" href="/2022/02/21/Stage_1/">Prototype Stage 1</a>
             
             
-            <a class="next" rel="next" href="/2022/02/21/index/">Curriculum Vitae</a>
+            <a class="next" rel="next" href="/2022/02/21/Stage_2/">Prototype Stage 2</a>
             
         </section>
 
