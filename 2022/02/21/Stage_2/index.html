@@ -132,71 +132,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
@@ -219,40 +154,18 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Stage-2"><a href="#Stage-2" class="headerlink" title="Stage 2"></a>Stage 2</h2><h3 id="Camera-Tracking-System"><a href="#Camera-Tracking-System" class="headerlink" title="Camera Tracking System"></a>Camera Tracking System</h3><br>
-<div align=center><img src="https://github.com/AllenKon/pic/blob/main/tracking1.jpg?raw=true" height=70% width=70%>  
+            <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="9aec1d7b6f4ea683857cdfdf8d8f552cd346ceb27680a1d2eade7b69adc986e2">84ffdc728000318b5b7f377a9b4077ba7404fd49055712d52203c9ec34fcbf41bcd9d812cfcce9d9df4f8da63f11649343801757dac661ff90cd214e51d72217addc15892c3326a3a62688b1b5abf9f2a7eecebae40b22a998b5bb071b50811dd66810068848d83d8d95fd3eac326372c2e48c129736cf6860a562abf876e9d453df757073f19b4ab8bf6ccffa54882b90fad38658ec3420195dcd9e8adbd115db93bf256dfa8ea8136a5f425c0d5c3ce7f0a3fb3c826132cb84bebd55704b8a29a3f536bcda21659101524ff1623bdee6df77c24cea6fad755afe8e3e7cd5d18c12bccea54e25783a897ddad896b18669953b5e75256ba29e911395eb01de4855afb43705ea49299732d0e46de86fabe60dea7f9bdc2f5932d06cf1bd130dda77b238bd428ab430a84625b01cd3e92fbe2483f75117a748313beefa0c65d7b63c70b0668c5551b358fb860ef01ab13081a98d9ca41f78d78d5e5024e6aa64c56492b55c039f1f84fd6f4bb8fe3325135d58ecb60d80da69efb05d95e0268d41807c7ccb30ddfdc703b49d396dc077736d92dd33bb0423a86e97c2dc58e920d98b044ac4cb7d7a71575210fd22920a85dd4caac0a782bbc46d93a66ae20a20c21013e14023d1b54079bb12282a46395bdb13f7cefde79c5e68e5ff9bf282396cc8ed4cfc1b98eadc47a6d17b8ac180e6da1c323fe5ba2f978b586db42e3b8be464187b293f9901e52806614bf2b42fb356f1eb36bdcea784316a090d56da2a3c2c5e9aedc10670a6875d896f1b6e92b18d2c896d1c41099768bd862ce3513518be805ce23913c6c8988df8eeaab17f318eac558c8d34c96a4e897ad80fda8e29d9e821e37b334c81afc0e92ebaeb6817a0e1bf9e91d895dea23c8d03c3c43940c9d80cfc57977f0b6980fc04ab100b712d858ab4a1e3a4e8f6aeac45c7e4dac6548fe1cee5d6cfe12c3ef35d92b87952d642b680225fb998e37876885470366f92cf2926b61cfec13f2db741469c3bba7649097c935af8e51b45f53c531dc6d9748ccc5bb28c521fe601b530ce3622399b5ad20ae4e41a434801e10a7ef3df87927b48a644af63a35d088f78b32a2ff7039c5cbb12539627e7517ad88106ca380a075d491e7d2b22896d9c29f94e1587721535dea2e2f2b3500dfcfb55c799c4a9d9f3c6356857dcf11a3df4e4646f345d80403a00c6dd2a0cba81bd9dca4af5351bf13cfe06c3f8f082017cd951c920dd352f484bd20f1a7815262dc8f321999ef5a2cc60705eda266782d58e968bd5b1c72cfa05a6619d0d400b0833370bbda82830284c0cbcba7386fd2038c45885cbbe9dd7baf6a303e8b444585fb6bc2456af0d07ae03a044e93802bddeee2f2d964d3d4c3ed7e2abd45e78d0c0e495096bdbbfa05aaf2f7b0519473b8afe1963aa1fc99498b3460e264a51583c5379ba4a8e4f26f427a88f91a63ccb5686f6338aed487c820aa9fcd3966037750077e4af589fa1bc801ac9f1bc5dc372d712b0d5a82021c50042b92c55a539485f5dba9f51d4acf2d65843157a011dcd764a03f06eb897f7a0492448a18b42844af03dd756beecabbc8b332f18e092237044921d945f138dd184a0403f23cf3c16c3635ddc6876feb56f36bcdf0dbc35eb6367cfd9d5a1bc341217dcb1899a4120fccb0422a49de5682393e052cf29ed1cb37a4486eaca3b324c9bad966896f1132645cd2e742a2246818bc6935c5be9d91f22b2b3b1ac45d79ce0ebeed9884e90da15e6ff26062632b0235e16cbb744f0853fd13a2169ecf8f7bcc3c0fc39252a2489c225598f36dde549ccd5e2b8a18b7a7e3767051f75fbf0b2453b59d7f22198b210e9c7bfc75cc60bed4e3d7c972387bce004c947074556494a3ae79dbaf41b5134246d75274496bd438ae8a73b33b1a3f1f4d87917974dabf6c4ac6c7e6ae2b317bc962c92c61de8be72f28e1de70dc8d900cb2d60e8883da7f78d8ebffed44af2dd2e2178b94b03153124e7dd620842a6c2d12bb9760c77cb06ea52d9731a09e4bffa964b1d6094cc21d113288613e49156406fcee9cf3d193478eaff998ec02ae11d73d93e2e3b2f9d1afe19199a5b0ae31fd3b87383c6c1e607aef43d7bab87ab46c86347368c829f0955426fb0de94915e3f20c1da6600f20244c1f9a325f95d301a236cbfb2e9b0dfb323c958d4156f447e29bbff33d5d518b941f26771e12ff197ed61580b6909e175bb21242ba01062a97fe59ae1c03ae9fe2ff817da52cb3032084375369288609cc8dcc818aac43c5914ad5731c9add0c4115b8e4c0243d8f5d07df338daaf2bc1989306c28cd3520d067798c31c787f1ddac82393b26c7c173845dd160e0a2263f1cb516690bd27d530f3f1bf483cfbba8726f905215d82c83c16282a0ae4c8045f215d9db8660d6feb3276f929a9454a97b81b681983934d0daa9d001a2543abbdc6d3808d872664652afce0bfc88a50fea971740d83ec025c5e34782525967df8ab691b315072c240d9c21e7d4cbc7736270a0cc8bf16d9a4407e81d54481460f68309ed1e2771f649b9b380daf8311110c96572b68c172b87804c23a66afb2e31ad87e78efc80e4c506c7d903deed8d720c673a281d0f29e6d40ddb64d66103c6824a7ba2683a3ec7f973cef607ad227187cc5263a5f4d0567d945231efc9ee66456ca877c6c25eb14c9afdc7397edcfae5ceb674cf5fc379edb1030fc7bef85c8e1d7b5cc818594635a1cc9ea0543b4e21cef932033026bb3a4c1c8d83c2d1e973d7f9c13b3e823d859a2659c551426e49987ebfb3da56d398315faca94cbe585e052a8f930299d4dbdf1aef1e215a25e1fef2226e7cf1e7ed75a023a45ec56472e5c07313174ea7b94fa25706cfeb1f2ee0d23c7d8bfa3afddb0c9ad1adb33e8173327bb19f136fb3584997ba913c43ac8b6dccd87cab6b854cd1119bc50a1a430f86d4cb0802d4376700d9be588d61f129be43135b78201842a8b1235b422ee2281e2da487c048d3432c0d1b64f600d8add40ea553d2d9a248840e2174171e7bc7cf7369416938a586b52c243f8645d16b4591eb611b426eed30b05e4a78a195c15e26ffad338b1b29866437ac2fb7ff3f14972514307e6ed93e354f2bd15cf5dc21c8373cd9f5238aa93ec5ca72ebf348604a45d9ed781f3d4dd17cddc958dd6dcc3e2ef01ad58200064ce186c909c3af929de1487c4601517a3ac078c63cc2281db1ff3ec496ac9ea8ba3ccf07bb48f53b4b5c8aba331fefc9a5d63ac560b6b61e267704c051bdec1eaa67e1f231c11268a16bb9fbcd563bf256ab9720a19aed5b37e430ab433962d1ee39287987acfc537bb28521f967d5fc678e73bc8c0678633cc39c0226498d8ae33b51b40ed7b5c15a34543cdf192123e634472e22af5f58fc1b253757982e7f66882c905bfcc4467b9e4c46e7b6ac85b20cb035b0f85c064aeac8dca49c19f7239c5887d8284aa66c80a4b7599fe4241e9fefdd44159f7d59db6886b52da6e621ebc603357c98f96a22440d527c729ee95d8dd641c2eb9cb063f9a8752f38c0c6746b2dbe4ebffd147e6b582ad8d4992c7a7573a73d7fee05c5fea858bd18256478875ab96d18cd933329d6206d46548b7036e8c92b1e9fbcaa81152fef59c59f2bbf0ff08c745eb446ca38ef19c177c6187b92ad340f2017bde7b7638e6871888b9d17f670415134f953bab0a5a1777d4c3783a8da21645e1c812cc053acfb7f4e88b961a32deecba69dea6a7dc64bc48e5e296b6289e312e6ef788ce7ce069fe411886d20a221ae28f8e00a0e0ab11af3dd249f617f8507d7f1f5298e7b9f0e9caf2979c196458cdc930b3646f6a2b5601c2bf5efd32a014ed65cefa4aaee4851540c7d24384ed04e8b51c6c46adef330cb430833183b8472b502d10bfbe85cad683d5452f1515935788025b481eea2b980622fd0ae935712c746bf07450d848169f1cdafae3fe99bb601b75e6ca6c9044c3180739ea095d316759b59c696bcbd7c4aef8c1847a23b7e30f56d8312f908e0a8c4c88ef4b3db71f3fae1a342d5b2e7a4277a782c03e86191d613dd0e523392a28f8f58749278f726a29116221da5b814eb506a0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
 </div>
-<br>
-
-<div align=center><img src="https://github.com/AllenKon/pic/blob/main/tracking2.jpg?raw=true" height=70% width=70%>  
-</div>
-<br>
-
-<ul>
-<li><p><font face="times new roman">The capacity for visual perception is essential for social robots in hospital environments, as it enables the machine to detect and identify individuals in its surroundings. This capability includes the ability to recognize and respond to various forms of nonverbal communication, such as facial expressions, gestures, and body language, which are all critical aspects of human interaction.</font></p>
-</li>
-<li><p><font face="times new roman">The ability to perceive and interpret visual information permits the robot to execute specialized tasks such as delivering specific items to designated locations or individuals. This function requires the machine to recognize and locate specific objects or individuals accurately, which is a fundamental aspect of the robot’s overall functionality.</font></p>
-</li>
-<li><p><font face="times new roman">The capacity for visual perception enhances the robot’s ability to offer emotional support and companionship to patients by recognizing and responding to emotional cues such as sadness, happiness, or anxiety.</font></p>
-</li>
-</ul>
-<br>
-
-<h3 id="Move-system"><a href="#Move-system" class="headerlink" title="Move system"></a>Move system</h3><br>
-
-<div align=center><img src="https://github.com/AllenKon/pic/blob/main/Move.jpeg?raw=true" height=70% width=70%>  
-</div>
-<br>
-
-<ul>
-<li><p><font face="times new roman">Movement enhances the robot’s capability to navigate through complex environments and interact with humans more effectively. This includes the ability to move to various locations within a hospital setting and approach people to offer assistance or perform tasks.</font></p>
-</li>
-<li><p><font face="times new roman">Movement is fundamental for the robot’s ability to manipulate objects, such as picking up and delivering items. This demands the robot to move its arms, hands, and fingers in a precise manner, requiring a high level of control and accuracy.</font></p>
-</li>
-<li><p><font face="times new roman">Movement is critical to the robot’s capacity to provide emotional support and companionship to patients. By being able to move and change its position, the robot can adjust its proximity to the patient and create a more natural and engaging interaction, which can have a significant impact on the patient’s emotional state.</font></p>
-</li>
-</ul>
-
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
         </div>
 
         
@@ -299,10 +212,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/02/21/Use_Scenario/">Use Scenario</a>
+                <a class="prev" rel="prev" href="/2022/02/21/Stage_1/">Prototype Stage 1</a>
             
             
-            <a class="next" rel="next" href="/2022/02/21/index/">Curriculum Vitae</a>
+            <a class="next" rel="next" href="/2022/02/21/Use_Scenario/">Use Scenario</a>
             
         </section>
 

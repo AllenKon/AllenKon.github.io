@@ -132,71 +132,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
@@ -219,17 +154,18 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Stage-1-Visual"><a href="#Stage-1-Visual" class="headerlink" title="Stage 1 (Visual)"></a>Stage 1 (Visual)</h2><div align=center><img src="https://github.com/AllenKon/pic/blob/main/Visual%20part.jpg?raw=true" >  
+            <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="13f17d1d832ff4fe84a1997f99727a3904cf6dcf05b73aae02627d9d76b22f11">84ffdc728000318b5b7f377a9b4077ba7404fd49055712d52203c9ec34fcbf41ab29a6ddcdbe9ce66534f5fc90f820b572bee09eeffb689e02b20484deb20a0c18323314737842cf431c143e54107c45e1f2743ab50276b3c1c2bc53055707ef5490081357fa7fe8f61bd64147ece56be52a511d661c654d5c0053373ff9efd6595be5d39bdc137aa73bc5d180b4819c7d12e714ae29bcca7cbc688f20003be9c382ebc30110a7200f054f1e44d125e76813b476a24e669da30ce4b7e79b9e0bdea3ebb0de23c18fa119579ce63c103dc12a97568b889537c58da6acafdb0edc2efcd3874d3f65dc67bcafa367b7320895ede4510f4db7e49e7c5ac8fb5ec03c091b7641ef0b7368b5884ff877185f2bfaf121a35236d4fccabc88fbaaf8c5c3201ffb79cce43b7dcee66d5bd591d4b26ef2d47f8f168a86912647ab4e701b4993111b8d0197ca0a0f2a2caca5c56fa814f94df52156f22e54ce7496936e00a3dd17d8b32da7e93a57ace19a7872618923abd336be18afad5e8622897978bbdb183feb9d9d98f46380346b89e0ce9c75b8fd00d4bf5c6dd64bddb2475ef6b0b3aa2a1a9c22be71e9b3521149b18e770dabcd57aa3afe49976613252623213b3165fa6ca773515f5940b1f3378af4aadbe7b41266fa473eac4ab30d18e884d03a26e4409fe7618e4a338444d5acc85879408861f40dafdfef8705da4c5eca6d10a112d0ac37ca95d8ead0761bf6fdefb1b7a5b07e90f1ef6c024078d6b21d2be08d9380c624117aa4c861ae9373461be28561983e681b0780adfedb72e39852f1d6840efe64ab09ffbb068ddc03fd4473148963f3655df69c518a28e5cd885c4f249e1fc30648de4c122eecd667aa3d41a1660bafb272b87c45f5e6a8f4695e0e5e94ae7078bfbfe1450ae7d097e761c38c83268927898a05cf71a33f2e7a45f029e225560fb0ae76f8c1f77048346d691a9faf95ee1f7e6c39de668750c6b24d3d91c8a42723edd9514e34d2ce9d42a6d7a36114e387afe5f9bbc547e67d7dd2130390ffdd0b813f95f06cd329d3145809fb1242ac45ab660f49e2f44fa5051315989e1d0e0705538d7219e82f304f7dd0f9eb4f5a50c03159c7c030dad0ecedfb77c30378d54fe0cdbe8046c2c031d38f3d4879d681b43012b0c4eb8e70fb91132160d58fed3ee0da4dd07522035b9d952d8311aa4ded809aaf375c6184bff1067fbaea41c3c404db77b8c6ee5383c2bcc97d8790e6f1cfb2a44a6f7d402d8f7cef3a183ed8c7bca6f8f8efb67e04410dc5307f5a97c541763938fdd3bfbe47</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
 </div>
-<br>
-
-<ul>
-<li><p><font face="times new roman">To enhance the quality of interaction between a social robot and its user, it is necessary to equip the robot with a visual component that allows its interaction screen to track the user’s head movements in real time. This can facilitate the robot’s ability to respond appropriately to the user’s nonverbal cues, thereby improving the effectiveness of human-robot interaction.</font></p>
-</li>
-<li><p><font face="times new roman">To explore what are the ‘effective’ interactive behaviors of social robots in emotional communication and social interaction with human in waiting environments.</font></p>
-</li>
-</ul>
-
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
         </div>
 
         
@@ -279,7 +215,7 @@
                 <a class="prev" rel="prev" href="/2022/02/21/Research_Background/">Pre-research</a>
             
             
-            <a class="next" rel="next" href="/2022/02/21/Use_Scenario/">Use Scenario</a>
+            <a class="next" rel="next" href="/2022/02/21/Stage_2/">Prototype Stage 2</a>
             
         </section>
 
